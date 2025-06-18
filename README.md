@@ -1,4 +1,4 @@
-# Week 1: Serverless Claude Chat Backend
+# Week 1: Advanced Serverless Claude Chat Backend
 
 ## Project Overview
 A production-ready serverless chatbot backend demonstrating advanced software engineering principles, algorithmic complexity analysis, comprehensive testing, CI/CD automation, and performance optimization.
@@ -13,8 +13,6 @@ Client → API Gateway → Lambda → AWS Bedrock (Claude) → Response
 ```
 
 ### Algorithmic Complexity Analysis
-
-#### A. Core Algorithm Complexities
 
 1. **Conversation Management**
    - **Add Message**: O(1) average case, O(n) worst case when evicting old messages
@@ -36,12 +34,6 @@ Client → API Gateway → Lambda → AWS Bedrock (Claude) → Response
      - n = input text length
      - m = conversation history length  
      - k = rate limiting window cleanup
-
-#### B. Performance Characteristics
-- **Cold Start**: ~2-3 seconds (Lambda initialization)
-- **Warm Start**: ~200-500ms (average response time)
-- **Throughput**: 10-50 concurrent requests per Lambda instance
-- **Memory Usage**: 128MB-512MB depending on conversation length
 
 ## 📊 Code Coverage & Testing
 
@@ -69,34 +61,6 @@ python -m pytest tests/ --cov=chatbot --cov-report=html --cov-report=term
 3. **Performance Benchmarks**: Latency, throughput, memory usage
 4. **Security Validation**: Prompt injection detection, input sanitization
 
-## 🚀 CI/CD Pipeline
-
-### GitHub Actions Workflow
-```yaml
-Trigger: Push to main/develop, Pull Requests
-├── Test Job (Python 3.9, 3.10, 3.11)
-│   ├── Unit Tests with Coverage (80%+ required)
-│   ├── Security Scanning (Bandit, Safety)
-│   └── Code Quality (Black, Flake8, Pylint, MyPy)
-├── Performance Testing
-│   ├── Algorithm Complexity Validation
-│   ├── Load Testing (up to 50 concurrent users)
-│   └── Benchmark Report Generation
-├── Deploy Staging (develop branch)
-│   ├── SAM Build & Deploy
-│   └── Integration Tests
-└── Deploy Production (main branch)
-    ├── SAM Build & Deploy
-    ├── Smoke Tests
-    └── Slack Notification
-```
-
-### Deployment Automation
-- **Infrastructure as Code**: AWS SAM templates
-- **Automated Testing**: 80%+ code coverage requirement
-- **Security Scanning**: Automated vulnerability detection
-- **Performance Monitoring**: Continuous benchmark tracking
-- **Zero-Downtime Deployment**: Blue-green deployment strategy
 
 ## ⚡ Performance Profile & Benchmarking
 
@@ -113,7 +77,7 @@ Median Response Time: 245ms
 #### Throughput Analysis
 ```bash
 # Run performance benchmark
-python benchmark.py --endpoint https://your-api-url/Prod/chat --charts
+python benchmark.py --endpoint https://qo83onnpe0.execute-api.us-east-2.amazonaws.com/Prod/chat --charts
 
 # Results:
 - Peak Throughput: 45 RPS (requests per second)
@@ -190,37 +154,6 @@ serverless-chat/
 }
 ```
 
-## 💰 Cost Analysis & Optimization
-
-### Cost Breakdown (Monthly estimates for 10K requests)
-- **Lambda**: ~$0.20 (execution time)
-- **API Gateway**: ~$0.35 (requests)
-- **Bedrock**: ~$30-75 (token usage, varies by conversation length)
-- **CloudWatch**: ~$5 (logging and monitoring)
-- **Total**: ~$35-80/month for 10K conversations
-
-### Cost Optimizations
-1. **Efficient Tokenization**: Minimize prompt length
-2. **Connection Reuse**: Reduce API overhead
-3. **Rate Limiting**: Prevent abuse and control costs
-4. **Monitoring**: Track usage patterns for optimization
-
-## 🔒 Security & Best Practices
-
-### Security Measures
-- **Input Validation**: Prompt injection detection
-- **Rate Limiting**: Prevent abuse and DoS attacks
-- **IAM Roles**: Least privilege access
-- **Encryption**: In-transit and at-rest data protection
-- **Logging**: Comprehensive audit trail
-
-### Code Quality Standards
-- **Type Hints**: Full typing coverage with MyPy
-- **Code Formatting**: Black formatting enforced
-- **Linting**: Flake8 and Pylint validation
-- **Security Scanning**: Bandit vulnerability detection
-- **Dependency Scanning**: Safety check for known vulnerabilities
-
 ## 🚀 Deployment Instructions
 
 ```bash
@@ -240,21 +173,3 @@ python benchmark.py --endpoint <your-api-url> --charts
 # 5. View test coverage
 open htmlcov/index.html
 ```
-
-## 📈 Advanced Features Demonstrated
-
-1. **Complex Data Structures**: Hash tables, LRU cache implementation
-2. **Algorithm Design**: Token bucket rate limiting, conversation management
-3. **Concurrent Programming**: Thread-safe operations, async processing
-4. **Performance Engineering**: Complexity analysis, benchmarking, optimization
-5. **Production Readiness**: CI/CD, monitoring, error handling, security
-
-## 🎯 Learning Objectives Achieved
-
-- **High Project Complexity**: Multi-component system with advanced algorithms
-- **Big O Analysis**: Detailed complexity analysis of all core operations
-- **Code Coverage**: 85%+ test coverage with comprehensive test suite
-- **CI/CD Implementation**: Complete GitHub Actions pipeline
-- **Performance Profiling**: Comprehensive benchmarking and optimization
-
-This project demonstrates production-level software engineering practices suitable for technical interviews and portfolio presentation.
