@@ -3,7 +3,7 @@
 ## Project Overview
 A production-ready serverless chatbot backend demonstrating advanced software engineering principles, algorithmic complexity analysis, comprehensive testing, CI/CD automation, and performance optimization.
 
-## 🏗️ Architecture & Complexity Analysis
+## Architecture & Complexity Analysis
 
 ### System Architecture
 ```
@@ -35,7 +35,7 @@ Client → API Gateway → Lambda → AWS Bedrock (Claude) → Response
      - m = conversation history length  
      - k = rate limiting window cleanup
 
-## 📊 Code Coverage & Testing
+## Code Coverage & Testing
 
 ### Test Coverage Report
 ```bash
@@ -62,7 +62,7 @@ python -m pytest tests/ --cov=chatbot --cov-report=html --cov-report=term
 4. **Security Validation**: Prompt injection detection, input sanitization
 
 
-## ⚡ Performance Profile & Benchmarking
+## Performance Profile & Benchmarking
 
 ### E. Performance Benchmarking Results
 
@@ -104,7 +104,7 @@ python benchmark.py --endpoint https://qo83onnpe0.execute-api.us-east-2.amazonaw
 - **Alerting**: Automated alerts for latency >1s or error rate >5%
 - **Dashboards**: Real-time performance visualization
 
-## 📁 Project Structure
+## Project Structure
 ```
 serverless-chat/
 ├── chatbot/
@@ -121,7 +121,7 @@ serverless-chat/
 └── README.md                 # This documentation
 ```
 
-## 🔧 API Documentation
+## API Documentation
 
 ### Endpoint
 - **URL**: `https://qo83onnpe0.execute-api.us-east-2.amazonaws.com/Prod/chat`
@@ -154,7 +154,7 @@ serverless-chat/
 }
 ```
 
-## 🚀 Deployment Instructions
+## Deployment Instructions
 
 ```bash
 # 1. Install dependencies
