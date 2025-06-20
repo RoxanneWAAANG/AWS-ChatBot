@@ -1,4 +1,4 @@
-# Week 1 -- Advanced Serverless Claude Chat Backend
+# Project 1 -- Advanced Serverless Claude Chat Backend
 
 ## Project Overview
 A production-ready serverless chatbot backend demonstrating advanced software engineering principles, algorithmic complexity analysis, comprehensive testing, CI/CD automation, and performance optimization.
